@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walden Hevoset</title>
+    <title>Walden Chat</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chat.css">
     <script src="/socket.io/socket.io.js"></script> <!-- Include Socket.IO client -->
 </head>
 <body>
     <center>
-        <div id="navigation">
-            <button onclick="loadPage('home')">Koti</button>
-            <button onclick="loadPage('about')">Meistä</button>
-            <button onclick="loadPage('contact')">Yhteystiedot</button>
-            <button onclick="loadPage('staff')">Henkilökunta</button>
-            <button onclick="setTheme('dark')">Dark Theme</button>
-            <button onclick="setTheme('white')">White Theme</button>
-        </div>
-        <div id="main_content" style="font-weight: bold; font-size: 45px;">Tervetuloa yrityksemme sivustolle!</div>
+        <nav>
+            <ul class="button-container">
+
+       
+                    <div id="navigation">
+                        <button class="button-85" onclick="loadPage('home')">Koti</button>
+                        <button class="button-85" onclick="loadPage('about')">Meistä</button>
+                        <button class="button-85" onclick="loadPage('contact')">Yhteystiedot</button>
+                        <button class="button-85" onclick="loadPage('staff')">Moderaattorit</button>
+                        <button class="button-85" onclick="setTheme('dark')">Dark Theme</button>
+                        <button class="button-85" onclick="setTheme('white')">White Theme</button>
+                    </div>
+                </ul>
+         </nav>
+         <br>
+         <br>
+        <div id="main_content" style="font-weight: bold; font-size: 30px;">Tervetuloa meidän chat palveluun!</div>
 
         <!-- Chat UI -->
         <div id="chat">
+            <input id="name" placeholder="Enter your name" autocomplete="off" />
             <ul id="messages"></ul>
             <form id="form">
                 <input id="input" autocomplete="off" /><button>Send</button>

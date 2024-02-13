@@ -10,6 +10,21 @@ const PORT = 3000;
 
 app.use(express.static('public')); // Serve static files from the public directory
 
+// Henkilökunnan tiedot JSON-muodossa
+const staffData = [
+  { id: 1, name: 'Matti Lehtonen', title: 'CEO', email: 'matti@example.com', phone: '040 123 4567'},
+  { id: 2, name: 'Kalle Lindemark', title: 'CTO', email: 'kalle@example.com', phone: '050 891 0111'},
+  { id: 3, name: 'Svante Svensson', title: 'Lead Developer', email: 'svante@example.com', phone: '060 131 4151'}
+];
+
+
+
+// Reitti henkilökunnan tietojen hakuun
+app.get('/api/staff', (req, res) => {
+  res.json(staffData);
+});
+
+// Chat
 io.on('connection', (socket) => {
     console.log('A user connected');
     
