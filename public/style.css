@@ -1,0 +1,31 @@
+:root {
+  --background-color-dark: #333;
+  --text-color-dark: #fff;
+  --background-color-light: #fff;
+  --text-color-light: #333;
+}
+
+body.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.white {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+#navigation button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+#navigation button:hover {
+  background-color: #ddd;
+}
+
+/* Additional styles for your content and layout can go here */

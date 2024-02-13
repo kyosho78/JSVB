@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
+    <title>Walden Hevoset</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="chat.css">
+    <script src="/socket.io/socket.io.js"></script> <!-- Include Socket.IO client -->
 </head>
 <body>
     <center>
@@ -16,18 +17,16 @@
             <button onclick="loadPage('staff')">Henkilökunta</button>
             <button onclick="setTheme('dark')">Dark Theme</button>
             <button onclick="setTheme('white')">White Theme</button>
-
         </div>
-        <br>
-        <br>
         <div id="main_content" style="font-weight: bold; font-size: 45px;">Tervetuloa yrityksemme sivustolle!</div>
-        <br>
-        <br>
 
-
-        Tervetuloa Walden chat palveluun
-        <br><br>
-        <a href="/chat.html">Walden chat</a>
+        <!-- Chat UI -->
+        <div id="chat">
+            <ul id="messages"></ul>
+            <form id="form">
+                <input id="input" autocomplete="off" /><button>Send</button>
+            </form>
+        </div>
     </center>
     <script src="script.js"></script>
 </body>
