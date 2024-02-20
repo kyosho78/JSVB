@@ -9,6 +9,7 @@ const io = new Server(server);
 const PORT = 3000;
 
 app.use(express.static('public')); // Staattisten tiedostojen hakemisto
+app.use(`/images`, express.static('images')); // Kuvien hakemisto
 
 // Henkilökunnan tiedot JSON-muodossa
 const staffData = [
