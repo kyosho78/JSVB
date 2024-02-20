@@ -8,7 +8,7 @@ const io = new Server(server);
 
 const PORT = 3000;
 
-app.use(express.static('public')); // Serve static files from the public directory
+app.use(express.static('public')); // Staattisten tiedostojen hakemisto
 
 // Henkilökunnan tiedot JSON-muodossa
 const staffData = [
@@ -19,7 +19,7 @@ const staffData = [
 
 
 
-// Reitti henkilökunnan tietojen hakuun
+// Hakee henkilökunnan dataa
 app.get('/api/staff', (req, res) => {
   res.json(staffData);
 });
@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
     console.log('A user connected');
     
     socket.on('chat message', (msg) => {
-        io.emit('chat message', msg); // Broadcast message to all clients
+        io.emit('chat message', msg); // Lähettää viestin kaikille
     });
 
     socket.on('disconnect', () => {

@@ -35,17 +35,17 @@ function setTheme(theme) {
     }
 }
 
-// Chat functionality
+// Chatti 
 var form = document.getElementById('form');
 var input = document.getElementById('input');
 var nameInput = document.getElementById('name');
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    if (input.value && nameInput.value) { // Check if both name and message are provided
-        var message = nameInput.value + ': ' + input.value; // Concatenate name and message
+    if (input.value && nameInput.value) { // Katsoo jos nimi ja viesti annettu
+        var message = nameInput.value + ': ' + input.value; // Yhditää nimen viestiin
         socket.emit('chat message', message);
-        input.value = ''; // Clear message input after sending
+        input.value = ''; // Viestin tyhjennys
     } else if (!nameInput.value) {
         alert("Please enter your name.");
     }
@@ -54,7 +54,7 @@ form.addEventListener('submit', function(e) {
 socket.on('chat message', function(msg) {
     var item = document.createElement('li');
     item.textContent = msg;
-    item.classList.add('blink'); // Add the blink class to make the message blink
+    item.classList.add('blink'); // Uuden viestin vilkutus
     document.getElementById('messages').prepend(item);
     window.scrollTo(0, document.body.scrollHeight);
 
@@ -64,5 +64,5 @@ socket.on('chat message', function(msg) {
     
 });
 
-// Load default page content
+// Lataa sivu
 loadPage('home');
