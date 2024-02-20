@@ -18,11 +18,13 @@ body.white {
 
 
 .button-container {
+  
   display: flex;
   justify-content: center;
 }
 
 .button-85 {
+  top: 20px;
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -92,112 +94,139 @@ body.white {
 /* weatherApp  */
 
 *{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
-  background: #222;
+    background: #222;
 }
 
-.card{
+.card {
+  position: fixed;
+  top: 20px; /* Adjust this value as needed to position it from the top */
+  right: 20px; /* Adjust this value as needed to position it from the right */
   width: 90%;
   max-width: 470px;
   background: linear-gradient(135deg, #00feba, #5b548a);
   color: #fff;
   padding: 40px 35px;
   border-radius: 20px;
-  margin: 100px auto 0;
   text-align: center;
+  transform: scale(0.75);
+  transform-origin: top right;
 }
+
 
 .search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nameMe {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; /* Aligns items in a row and allows flexible box layouts */
+  align-items: center; /* Centers items vertically */
+  justify-content: left; /* Centers content horizontally */
+  padding: 10px ; /* Adjust padding as needed */
+  min-height: 60px; /* Matches the height of your original input/button */
+  background: transparent; /* Transparent background */
+  color: #0a0a0a; /* Text color */
+  font-size: 25px ; /* Text size */
+  border-radius: 30px; /* Rounded corners for the label */
+  margin-right: 16px; /* Space to the right */
+  cursor: default; /* Changes the cursor to the default pointer */
+  margin-top: -40px;
 }
 
+.nameMe img {
+  width: 80px; /* Adjust the size of the image as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between the image and the text */
+}
+
+
 .search input{
-  padding: 10px 25px;
-  height: 60px;
-  border: 0;
-  outline: 0;
-  border-radius: 30px;
-  flex: 1;
-  font-size: 18px;
-  background: #ebfffc;
-  color: #555;
-  margin-right: 16px
+    padding: 10px 25px;
+    height: 60px;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    flex: 1;
+    font-size: 18px;
+    background: #ebfffc;
+    color: #555;
+    margin-right: 16px
 }
 
 .search button{
-  border: 0;
-  outline: 0;
-  background: #ebfffc;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 
 }
 
 .search button img{
-  width: 16px;
+    width: 16px;
 }
 
 .weather-icon{
-  width: 170px;
-  margin-top: 30px;
+    width: 170px;
+    margin-top: 30px;
 }
 
 .weather h1{
-  font-size: 80px;
-  font-weight: 500;
+    font-size: 80px;
+    font-weight: 500;
 }
 
 .weather h2{
-  font-size: 45px;
-  font-weight: 400;
-  margin-top: -10px;
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
 }
 
 .details{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
 }
 
 .col{
-  text-align: left;
-  align-items: center;
-  display: flex;
+    text-align: left;
+    align-items: center;
+    display: flex;
 }
 
 .col img{
-  width: 40px;
-  margin-right: 10px;
+    width: 40px;
+    margin-right: 10px;
 }
 
 .humidity, .wind{
-  margin-left: -6px;
-  font-size: 28px;
+    margin-left: -6px;
+    font-size: 28px;
 }
 
 .weather {
-  display: none;
+    display: none;
 }
 
 .error{
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 10px;
-  font-size: 14px;
-  display: none;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
 }
 
 
