@@ -8,10 +8,10 @@ const io = new Server(server);
 
 const PORT = 3000;
 
-app.use(express.static('public')); // Staattisten tiedostojen hakemisto
-app.use(`/images`, express.static('images')); // Kuvien hakemisto
+app.use(express.static('public')); // public folder
+app.use(`/images`, express.static('images')); // picture folder
 
-// Henkilökunnan tiedot JSON-muodossa
+// staff in  JSON
 const staffData = [
   { id: 1, name: 'Matti Lehtonen', title: 'CEO', email: 'matti@example.com', phone: '040 123 4567'},
   { id: 2, name: 'Kalle Lindemark', title: 'CTO', email: 'kalle@example.com', phone: '050 891 0111'},
@@ -20,7 +20,7 @@ const staffData = [
 
 
 
-// Hakee henkilökunnan dataa
+// get staff data
 app.get('/api/staff', (req, res) => {
   res.json(staffData);
 });
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
     console.log('A user connected');
     
     socket.on('chat message', (msg) => {
-        io.emit('chat message', msg); // Lähettää viestin kaikille
+        io.emit('chat message', msg); // Sends the message to all connected clients
     });
 
     socket.on('disconnect', () => {

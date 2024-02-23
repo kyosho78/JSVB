@@ -106,18 +106,27 @@ body{
 
 .card {
   position: fixed;
-  top: 20px; /* Adjust this value as needed to position it from the top */
-  right: 20px; /* Adjust this value as needed to position it from the right */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%) scale(0.75); 
   width: 90%;
   max-width: 470px;
+  max-height: 700px;
   background: linear-gradient(135deg, #00feba, #5b548a);
   color: #fff;
-  padding: 40px 35px;
+  padding: 20px 15px;
   border-radius: 20px;
   text-align: center;
-  transform: scale(0.75);
-  transform-origin: top right;
+  transform-origin: center; 
 }
+
+
+
+  .card:before {
+      filter: blur(5px); 
+  }
+
+
 
 
 .search{
@@ -128,24 +137,23 @@ body{
 }
 .nameMe {
   width: 100%;
-  display: flex; /* Aligns items in a row and allows flexible box layouts */
-  align-items: center; /* Centers items vertically */
-  justify-content: left; /* Centers content horizontally */
-  padding: 10px ; /* Adjust padding as needed */
-  min-height: 60px; /* Matches the height of your original input/button */
-  background: transparent; /* Transparent background */
-  color: #0a0a0a; /* Text color */
-  font-size: 25px ; /* Text size */
-  border-radius: 30px; /* Rounded corners for the label */
-  margin-right: 16px; /* Space to the right */
-  cursor: default; /* Changes the cursor to the default pointer */
+  display: flex; 
+  align-items: center; 
+  justify-content: left; 
+  min-height: 20px; 
+  background: transparent; 
+  color: #0a0a0a; 
+  font-size: 25px ; 
+  border-radius: 30px; 
+  margin-right: 16px; 
+  cursor: default; 
   margin-top: -40px;
 }
 
 .nameMe img {
-  width: 80px; /* Adjust the size of the image as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Space between the image and the text */
+  width: 120px; 
+  height: auto; 
+  margin-right: 10px; 
 }
 
 
@@ -217,9 +225,7 @@ body{
     font-size: 28px;
 }
 
-.weather {
-    display: none;
-}
+
 
 .error{
     text-align: left;
@@ -228,6 +234,56 @@ body{
     font-size: 14px;
     display: none;
 }
+
+
+
+/* For mobile */
+
+@media (max-width: 768px) {
+  .card {
+      padding: 20px 15px; 
+      font-size: 16px; 
+  }
+
+  .search input, .search button {
+      height: 48px; 
+      font-size: 16px; 
+  }
+
+  .search button img {
+      width: 24px; 
+  }
+
+  .weather-icon, .col img {
+      width: 48px; 
+  }
+
+  .weather h1 {
+      font-size: 60px; 
+  }
+
+  .weather h2, .humidity, .wind {
+      font-size: 24px; 
+  }
+
+  .details, .nameMe, .search {
+      flex-direction: column; 
+      align-items: center; 
+  }
+
+  .search {
+      margin-top: 20px; 
+  }
+
+  .nameMe {
+      margin-top: 10px; 
+  }
+
+  .col {
+      justify-content: center; 
+  }
+}
+
 
 
 
